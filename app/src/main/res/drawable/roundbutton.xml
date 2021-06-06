@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/clickcolor"
+    tools:targetApi="lollipop">
+<item>
+    <shape android:shape="rectangle">
+        <solid android:color="@color/shareButtonColor"/>
+            <corners android:radius="50dp"/>
+        </shape>
+</item>
+</ripple>
+
+
+
+
+
+
+
+
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >-->
+<!--    <solid android:color="@color/shareButtonColor"/>-->
+<!--    <corners android:radius="50dp"/>-->
+<!--</shape>-->
