@@ -14,9 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.sql.DataSource
 
@@ -31,6 +29,30 @@ class MainActivity : AppCompatActivity() {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+        mAdView.adListener = object: AdListener() {
+            override fun onAdLoaded() {
+                val toast = Toast.makeText(applicationContext, "Hello Javatpoint", Toast.LENGTH_LONG)
+                toast.show()
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                mAdView.loadAd(adRequest)
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        }
         loadmeme()
     }
     private fun loadmeme(){
