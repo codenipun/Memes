@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
+
+        loadmeme()
+    }
+    private fun loadmeme(){
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
         mAdView.adListener = object: AdListener() {
@@ -53,10 +57,6 @@ class MainActivity : AppCompatActivity() {
                 // to the app after tapping on an ad.
             }
         }
-        loadmeme()
-    }
-    private fun loadmeme(){
-
         progressbar.visibility = View.VISIBLE
 
         val url = "https://meme-api.herokuapp.com/gimme"
