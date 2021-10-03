@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
         MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
 
+        val adView = AdView(this)
+
+        adView.adSize = AdSize.BANNER
+
+        adView.adUnitId = "ca-app-pub-7831648431556978/8854975551"
         loadmeme()
     }
     private fun loadmeme(){
